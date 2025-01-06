@@ -1,238 +1,286 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Howard's website</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">Yun Hao Li</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="..." /></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li> -->
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
-                </ul>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Howard Li - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #000000;
+            --color-secondary: #333333;
+            --color-background: #ffffff;
+            --color-surface: #f5f5f5;
+            --color-text: #111111;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #000000 0%, #333333 100%);
+            background-clip: text; 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-link {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background: #000;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .section-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .skill-bar {
+            transition: width 1s ease-in-out;
+            background: #000;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- 導航欄 -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md border-b border-gray-100 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <span class="text-xl font-bold text-black">李昀澔 Howard Li</span>
+                <div class="space-x-8">
+                    <a href="#about" class="nav-link text-gray-600 hover:text-black">About</a>
+                    <a href="#education" class="nav-link text-gray-600 hover:text-black">Education</a>
+                    <a href="#skills" class="nav-link text-gray-600 hover:text-black">Skills</a>
+                    <a href="#interests" class="nav-link text-gray-600 hover:text-black">Interests</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-black">Contact me</a>
+                </div>
             </div>
-        </nav>
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <!-- About-->
-            <section class="resume-section" id="about">
-                <div class="resume-section-content">
-                    <h1 class="mb-0">
-                        李昀澔
-                        <span class="text-primary">Howard Li</span>
-                    </h1>
-                    <div class="subheading mb-5">
-                        台中市南區興大路145號理學大樓922b室
-                        <a href="mailto:name@email.com">yh2der@email.com</a>
-                    </div>
-                    <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
-                    <div class="social-icons">
-                        <a class="social-icon" href="https://www.linkedin.com/in/yun-hao-lee-3706352b1/"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-icon" href="https://github.com/yh2der"><i class="fab fa-github"></i></a>
-                        <!-- <a class="social-icon" href="#!"><i class="fab fa-twitter"></i></a>
-                        <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a> -->
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Experience-->
-            <!-- <section class="resume-section" id="experience">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Experience</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Senior Web Developer</h3>
-                            <div class="subheading mb-3">Intelitec Solutions</div>
-                            <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">March 2013 - Present</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Web Developer</h3>
-                            <div class="subheading mb-3">Intelitec Solutions</div>
-                            <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">December 2011 - March 2013</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Junior Web Designer</h3>
-                            <div class="subheading mb-3">Shout! Media Productions</div>
-                            <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">July 2010 - December 2011</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Web Design Intern</h3>
-                            <div class="subheading mb-3">Shout! Media Productions</div>
-                            <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">September 2008 - June 2010</span></div>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" /> -->
-            <!-- Education-->
-            <section class="resume-section" id="education">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Education</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">National Chung Hsing University</h3>
-                            <div class="subheading mb-3">Master's Degree</div>
-                            <div>Computer Science</div>
-                            <p>In Progress</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Sep 2024 - Aug 2025</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">National Taichung University of Science and Technology</h3>
-                            <div class="subheading mb-3">Bachelor's Degree</div>
-                            <div>Computer Science and Information Engineering</div>
-                            <p>GPA: 4</p>
-                            <p>Score: 92.93</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Feb 2020 - Jun 2023</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">I-Shou University</h3>
-                            <div class="subheading mb-3">Bachelor's Degree</div>
-                            <div>Information Engineering</div>
-                            <p>GPA: 3.9</p>
-                            <p>Score: 90.96</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Sep 2020 - Jan 2021</span></div>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Skills-->
-            <section class="resume-section" id="skills">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Skills</h2>
-                    <div class="subheading mb-3">Programming Languages & Tools</div>
-                    <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><i class="fab fa-html5"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-python"></i></li>
-                        <!-- <li class="list-inline-item"><i class="fab fa-angular"></i></li> -->
-                        <!-- <li class="list-inline-item"><i class="fab fa-react"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-node-js"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-sass"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-less"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-wordpress"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-gulp"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-grunt"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-npm"></i></li> -->
-                    </ul>
-                    <div class="subheading mb-3">Workflow</div>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Mobile-First, Responsive Design
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Cross Browser Testing & Debugging
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Cross Functional Teams
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Agile Development & Scrum
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Interests-->
-            <section class="resume-section" id="interests">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Interests</h2>
-                    <p>Apart from being a developer, I enjoy most of my time being outdoors. Mostly, I go to gym, besides that, I love playing badminton.</p>
-                    <p class="mb-0">When forced indoors, I am a huge fan of Netflix series, I can watch it all day. </p>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Awards-->
-            <section class="resume-section" id="awards">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Awards & Certifications</h2>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-scroll"></i></span>
-                            TOEIC
-                        </li>
-                        <!-- <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Mobile Web Specialist - Google Certification
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            1
-                            <sup>st</sup>
-                            Place - University of Colorado Boulder - Emerging Tech Competition 2009
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            1
-                            <sup>st</sup>
-                            Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            2
-                            <sup>nd</sup>
-                            Place - University of Colorado Boulder - Emerging Tech Competition 2008
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            1
-                            <sup>st</sup>
-                            Place - James Buchanan High School - Hackathon 2006
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            3
-                            <sup>rd</sup>
-                            Place - James Buchanan High School - Hackathon 2005 -->
-                        </li>
-                    </ul>
-                </div>
-            </section>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+    </nav>
+
+    <!-- 主要內容 -->
+    <main class="pt-20">
+        <!-- 個人介紹 -->
+        <section id="about" class="min-h-screen flex items-center justify-center bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 py-16 text-center section-fade">
+                <div class="mb-8">
+                    <div class="w-40 h-40 mx-auto rounded-full overflow-hidden ring-2 ring-black">
+                        <img src="/api/placeholder/160/160" alt="Howard Li" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <h1 class="text-5xl font-bold mb-4 text-black">李昀澔 Howard Li</h1>
+                <p class="text-xl text-gray-600 mb-4">Computer Science Graduate Student</p>
+                <p class="text-gray-600 mb-8">
+                    台中市南區興大路 145 號理學大樓 922b 室<br>
+                    <a href="mailto:yh2der@email.com" class="text-black hover:text-gray-600">yh2der@email.com</a>
+                </p>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://github.com/yh2der" class="text-black hover:text-gray-600 transition">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yun-hao-lee-3706352b1/" class="text-black hover:text-gray-600 transition">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 學歷 -->
+        <section id="education" class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 section-fade">
+                <h2 class="text-3xl font-bold mb-12 text-center text-black">Education</h2>
+                <div class="space-y-8">
+                    <div class="card bg-gray-50 rounded-none border border-gray-200 p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-semibold text-black">National Chung Hsing University</h3>
+                                <p class="text-gray-600">Master's Degree - Computer Science</p>
+                                <p class="text-gray-500">In Progress</p>
+                            </div>
+                            <span class="text-gray-500">Sep 2024 - Aug 2025</span>
+                        </div>
+                    </div>
+                    <div class="card bg-gray-50 rounded-none border border-gray-200 p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-semibold text-black">National Taichung University of Science and Technology</h3>
+                                <p class="text-gray-600">Bachelor's Degree - Computer Science</p>
+                                <p class="text-gray-500">GPA: 4.0 | Score: 92.93</p>
+                            </div>
+                            <span class="text-gray-500">Feb 2021 - Jun 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技能 -->
+        <section id="skills" class="py-20 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 section-fade">
+                <h2 class="text-3xl font-bold mb-12 text-center text-black">Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="card bg-white rounded-none border border-gray-200 p-6">
+                        <h3 class="text-xl font-semibold mb-6 text-black">Programming Languages</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>HTML/CSS</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="h-1 bg-gray-200">
+                                    <div class="skill-bar h-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>JavaScript</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="h-1 bg-gray-200">
+                                    <div class="skill-bar h-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Python</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="h-1 bg-gray-200">
+                                    <div class="skill-bar h-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-white rounded-none border border-gray-200 p-6">
+                        <h3 class="text-xl font-semibold mb-6 text-black">Professional Skills</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-black mr-2"></i>
+                                Mobile-First, Responsive Design
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-black mr-2"></i>
+                                Cross Browser Testing & Debugging
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-black mr-2"></i>
+                                Cross Functional Teams
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-black mr-2"></i>
+                                Agile Development & Scrum
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 興趣 -->
+        <section id="interests" class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 section-fade">
+                <h2 class="text-3xl font-bold mb-12 text-center text-black">Interests</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="card bg-gray-50 rounded-none border border-gray-200 p-6">
+                        <i class="fas fa-dumbbell text-4xl text-black mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-4 text-black">Physical Fitness</h3>
+                        <p class="text-gray-600">
+                            Apart from being a developer, I enjoy most of my time being outdoors. 
+                            Mostly, I go to gym, besides that, I love playing badminton.
+                        </p>
+                    </div>
+                    <div class="card bg-gray-50 rounded-none border border-gray-200 p-6">
+                        <i class="fas fa-film text-4xl text-black mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-4 text-black">Entertainment</h3>
+                        <p class="text-gray-600">
+                            When forced indoors, I am a huge fan of Netflix series, 
+                            I can watch it all day.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 聯繫方式 -->
+        <section id="contact" class="py-20 bg-black text-white">
+            <div class="max-w-4xl mx-auto px-4 text-center section-fade">
+                <h2 class="text-3xl font-bold mb-12">Get In Touch</h2>
+                <div class="flex justify-center space-x-8">
+                    <a href="https://github.com/yh2der" class="text-white/80 hover:text-white transition">
+                        <i class="fab fa-github text-3xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yun-hao-lee-3706352b1/" class="text-white/80 hover:text-white transition">
+                        <i class="fab fa-linkedin text-3xl"></i>
+                    </a>
+                    <a href="mailto:yh2der@email.com" class="text-white/80 hover:text-white transition">
+                        <i class="fas fa-envelope text-3xl"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white/80 py-8">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p>© <span id="year"></span> Howard Li. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 更新年份
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 滾動動畫
+        const sections = document.querySelectorAll('.section-fade');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // 平滑滾動
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
 </html>
